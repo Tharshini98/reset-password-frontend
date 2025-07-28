@@ -1,26 +1,28 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';  
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();  
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://password-reset-backend-nvll.onrender.com/api/auth/register', {
-        name,
-        email,
-        password
-      }, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+      const response = await axios.post(
+        'https://password-reset-backend-nvll.onrender.com/api/auth/register',
+        { name, email, password },
+        { headers: { 'Content-Type': 'application/json' } }
+      );
 
       alert(response.data.message);
+
+      
+      navigate('/login');
+
     } catch (err) {
       console.error(err);
       alert(err.response?.data?.message || 'Registration failed');
