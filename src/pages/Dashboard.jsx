@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import './auth.css';
+import './index.css';
 
 export default function Dashboard() {
   const navigate = useNavigate();
