@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './auth.css';
+import './index.css';
 
 export default function RequestReset() {
   const [email, setEmail] = useState('');
