@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './auth.css';
+import './index.css';
 
 function getStrength(pw) {
   let s = 0;
